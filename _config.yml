@@ -1,0 +1,26 @@
+# Permalinks
+permalink:        pretty
+relative_permalinks: true
+
+# Setup
+title:            Bergen Perl Mongers
+tagline:          The home for Perl Mongers in Bergen, Norway
+url:              http://bergenpm.org
+paginate:         5
+baseurl:          /
+author:
+  name:           Christopher Rasch-Olsen Raa
+  url:            https://twitter.com/bergenpm
+  email:          post@bergenpm.org
+
+# Custom vars
+version:          1.0.0
+github:
+  repo:           https://github.com/bergenPM/bergenpm.github.io
+
+pages_list:
+  About: '/about'
+  Archive: '/archive'
+  Feed: '/atom.xml'
+
+encoding: UTF-8
