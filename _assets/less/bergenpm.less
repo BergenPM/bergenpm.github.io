@@ -16,7 +16,7 @@ body {
     min-height: 100%;
     color: #333;
     background: white;
-    font: 400 24px/1.5em 'Merriweather', serif;
+    font: 400 24px/1.6em 'Merriweather', serif;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
 }
@@ -44,23 +44,27 @@ div#container {
     header#top {
         background-color: darken(white, 5%);
         .at2x('../img/cubes.png');
-        padding: 1em 0;
+        padding: .5em 0;
         .clearfix;
         position: relative;
         .inner {
             position: relative;
         }
         #logo {
-            display: inline-block;
+            display: block;
             a {
                 display: block;
+                margin: auto;
                 text-indent: -999em;
-                width: 379px;
+                width: 200px;
                 height: 81px;
-                .at2x('../img/bergenpm-logo.png', 379px, 81px);
+                .at2x('../img/bergenpm-logo.png', 200px, 43px);
+                background-repeat: no-repeat;
+                background-position: center center;
             }
         }
         nav {
+            display: none;
             position: absolute;
             top: 50%;
             right: 20px;
@@ -79,22 +83,20 @@ div#container {
         header {
             position: relative;
             .clearfix;
-            picture {
-                float: left;
-                width: 80px;
-                height: 80px;
-                margin-right: 20px;
-                text-align: center;
-            }
-            h2 {
-                float: left;
-                margin: 0;
-                font-size: 2em;
-                line-height: 80px;
+        }
+        picture {
+            display: block;
+            text-align: center;
+            img {
+                width: 100px;
+                height: 100px;
             }
         }
+        h2 {
+            text-align: center;
+        }
         p {
-            margin-left: 100px;
+            text-align: center;
         }
     }
 
@@ -104,7 +106,7 @@ div#container {
             margin-top: 2em;
             figure {
                 float: left;
-                width: 33.333%;
+                width: 100%;
                 height: 400px;
                 margin: 0;
                 overflow: hidden;
@@ -140,35 +142,60 @@ div#container {
 
 }
 
-@media screen and (max-width: 69.5em) {
-    div#container {
-        #past {
-            .grid {
-                figure {
-                    width: 50%;
-                    figcaption {}
-                }
-            }
+@media only screen and (min-width : 768px) {
+    div#container header#top {
+        padding: 1em 0;
+        #logo a {
+            width: 379px;
+            height: 81px;
+            background-size: 379px 81px;
         }
+    }
+    div#container #past .grid figure {
+        width: 50%;
     }
 }
 
-@media screen and (max-width: 41.5em) {
+@media only screen and (min-width : 1024px) {
     div#container {
-        #past {
-            .grid {
-                figure {
-                    width: 100%;
-                    figcaption {}
+        header#top {
+            padding: 1em 0;
+            #logo {
+                a {
+                    margin: 0;
+                    width: 379px;
+                    height: 81px;
+                    background-size: 379px 81px;
                 }
             }
         }
-    }
-}
-
-@media screen and (max-width: 25em) {
-    body {
-
+        > section {
+            picture {
+                float: left;
+                width: 80px;
+                height: 80px;
+                margin-right: 20px;
+                text-align: center;
+                img {
+                    width: auto;
+                    height: auto;
+                }
+            }
+            h2 {
+                float: left;
+                text-align: left;
+                margin: 0;
+                font-size: 2em;
+                line-height: 80px;
+            }
+            p {
+                margin-left: 100px;
+                text-align: left;
+            }
+        }
+        #past .grid figure {
+            width: 33.333%;
+        }
     }
 }
 
