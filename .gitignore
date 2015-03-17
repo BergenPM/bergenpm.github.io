@@ -26,6 +26,7 @@ Thumbs.db
 nbproject
 *.sublime-projects*.sublime-workspace
 .idea
+prepros.cfg
 
 # Komodo
 *.komodoproject
