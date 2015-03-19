@@ -1,0 +1,18 @@
+---
+layout: default
+title: Bergen Perl Mongers | Blog
+---
+
+{% for post in site.posts %}
+<section class="post">
+  <div class="inner">
+    <header>
+			<time datetime="{{ post.date | date_to_xmlschema }}" class="post-date">{{ post.date | date_to_string }}</time>
+			<h2 class="post-title">
+				<a href="{{ post.url }}">{{ post.title }}</a>
+			</h2>
+    </header>
+    {{ post.content }}
+  </div>
+</section>
+{% endfor %}
