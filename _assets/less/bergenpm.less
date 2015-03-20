@@ -31,6 +31,7 @@ input, textarea, select {
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Merriweather', serif;
     font-weight: 400;
+    line-height: 1.2em;
 }
 
 div#container {
@@ -95,11 +96,21 @@ div#container {
                 margin: auto;
             }
         }
-        h2 {
+        h1, h2, p {
             text-align: center;
         }
-        p {
-            text-align: center;
+        &.page-404 {
+            h1 {
+                span {
+                    font-size: 2em;
+                    display: inline-block;
+                    margin-bottom: .5em;
+                }
+            }
+            p {
+                text-align: center;
+            }
+
         }
     }
 
