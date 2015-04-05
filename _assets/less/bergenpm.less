@@ -53,9 +53,10 @@ div#container {
         }
         #logo {
             display: block;
+            float: left;
             a {
                 display: block;
-                margin: auto;
+                margin: 0;
                 text-indent: -999em;
                 width: 200px;
                 height: 81px;
@@ -65,15 +66,19 @@ div#container {
             }
         }
         nav {
-            display: none;
-            position: absolute;
-            top: 50%;
+            float: right;
             right: 20px;
-            margin: -30px 0 0;
+            height: 81px;
+            line-height: 81px;
             a {
                 display: inline-block;
-                width: 60px;
-                height: 60px;
+                line-height: 1em;
+                text-decoration: none;
+                background-color: #333;
+                color: white;
+                border-radius: 3px;
+                padding: .4em;
+                font-size: .8em;
             }
         }
     }
@@ -111,6 +116,33 @@ div#container {
                 text-align: center;
             }
 
+        }
+        &.posts {
+            .post-date {
+                margin: auto;
+                width: 80px;
+                display: block;
+                text-align: center;
+                line-height: 1em;
+                > span {
+                    display: block;
+                    width: 100%;
+                }
+                .day {
+                    font-size: 1.5em;
+                }
+                .month {
+                    font-size: 1em;
+                    margin: 8px 0 5px;
+                }
+                .year {
+                    font-size: .9em;
+                    margin: -5px 0 0;
+                }
+            }
+            p {
+                text-align: left;
+            }
         }
     }
 
@@ -157,20 +189,6 @@ div#container {
 }
 
 @media only screen and (min-width : 768px) {
-    div#container header#top {
-        padding: 1em 0;
-        #logo a {
-            width: 379px;
-            height: 81px;
-            background-size: 379px 81px;
-        }
-    }
-    div#container #past .grid figure {
-        width: 50%;
-    }
-}
-
-@media only screen and (min-width : 1024px) {
     div#container {
         header#top {
             padding: 1em 0;
@@ -195,7 +213,7 @@ div#container {
                     height: auto;
                 }
             }
-            h2 {
+            h1, h2 {
                 float: left;
                 text-align: left;
                 margin: 0;
@@ -206,7 +224,24 @@ div#container {
                 margin-left: 100px;
                 text-align: left;
             }
+            hr {
+                margin-left: 100px;
+            }
+            &.posts {
+                .post-date {
+                    float: left;
+                    margin-right: 20px;
+                }
+            }
         }
+        #past .grid figure {
+            width: 50%;
+        }
+    }
+}
+
+@media only screen and (min-width : 1024px) {
+    div#container {
         #past .grid figure {
             width: 33.333%;
         }

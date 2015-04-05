@@ -1,0 +1,23 @@
+---
+layout: default
+title: Bergen Perl Mongers | Blog
+---
+
+{% for post in site.posts %}
+<section class="posts">
+    <div class="inner">
+        <article class="post">
+            <header>
+                <time datetime="{{ post.date | date_to_xmlschema }}" class="post-date">
+                    <span class="day">{{ post.date | date: "%d" }}</span>
+                    <span class="month">{{ post.date | date: "%b" }}</span>
+                    <span class="year">{{ post.date | date: "%Y" }}</span>
+                </time>
+                <h2 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
+            </header>
+            {{ post.content }}
+            <p class="post-author">Written by: <a href="//twitter.com/{{ post.author_twitter }}">{{ post.author_name }}</a></p>
+        </article>
+    </div>
+</section>
+{% endfor %}
