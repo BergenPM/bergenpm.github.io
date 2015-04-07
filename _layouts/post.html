@@ -15,6 +15,7 @@ layout: default
             </header>
             {{ content }}
             <p class="post-author">Written by: <a href="//twitter.com/{{ page.author_twitter }}">{{ page.author_name }}</a></p>
+						{% include disqus.html disqus_identifier=page.permalink disqus_title=page.title %}
         </article>
     </div>
 </section>
